@@ -40,49 +40,17 @@ export default [
 		icon: 'ArrowsAltOutlined',
 	},
 
-	{
-		path: '/gamenumber',
-		name: 'GameNumber',
-		component: './GameNumber',
-		icon: '🎲',
-	},
 
-	{
-		path: '/oan-tu-ti',
-		name: 'OanTuTi',
-		component: './OanTuTi',
-		icon: '🎲',
-	},
-	{
-		path: '/MonHoc',
-		name: 'MonHoc',
-		component: './MônHọc',
-		icon: '🎲',
-	},
-	{
-		path: '/Danhgiadichvu',
-		name: 'Danhgiadichvu',
-		component: './Danhgiadichvu',
-		icon: '🎲',
-	},
+
+
 	{
 		path: '/Course',
 		name: 'Course',
 		component: './Course',	
 		icon: '🎲',
 	},
-	{
-		path: '/QuanlySoVanBang',
-		name: 'QuanlySoVanBang',
-		component: './QuanlySoVanBang',
-		icon: '🎲',
-	},
-	{
-		path: '/Cauhinhbieumauvanbang',
-		name: 'Cauhinhbieumauvanbang',
-		component: './Cauhinhbieumauvanbang',
-		icon: '🎲',
-	},
+
+
 
 	
 	
