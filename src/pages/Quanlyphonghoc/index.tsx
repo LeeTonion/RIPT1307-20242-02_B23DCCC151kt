@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Table, Button, Input, Select, Form, Modal, message,
   Card, Row, Col, Typography, Divider, Space, Badge, Tag
@@ -9,62 +9,10 @@ import {
 } from '@ant-design/icons';
 import { ColumnsType } from 'antd/es/table';
 import './index.css'; // Import file CSS riêng
-
-// Định nghĩa kiểu dữ liệu và enum
-enum RoomType {
-  Theory = 'Lý thuyết',
-  Practice = 'Thực hành',
-  Hall = 'Hội trường',
-}
-
-interface Classroom {
-  id: string;
-  name: string;
-  capacity: number;
-  type: RoomType;
-  responsiblePerson: string;
-}
-
-const RESPONSIBLE_PERSONS = ['Nguyễn Văn A', 'Trần Thị B', 'Lê Văn C'];
-const STORAGE_KEY = 'classrooms';
-
-// Map room type to colors for tags
-const roomTypeColors = {
-  [RoomType.Theory]: 'blue',
-  [RoomType.Practice]: 'green',
-  [RoomType.Hall]: 'purple',
-};
-
-// Service functions
-const getClassrooms = (): Classroom[] => {
-  const data = localStorage.getItem(STORAGE_KEY);
-  return data ? JSON.parse(data) : [];
-};
-
-const saveClassrooms = (classrooms: Classroom[]) => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(classrooms));
-};
-
-// Define Statistic component
-interface StatisticProps {
-  title: string;
-  value: number;
-  prefix?: React.ReactNode;
-}
-
-const Statistic: React.FC<StatisticProps> = ({ title, value, prefix }) => {
-  return (
-    <div className="statistic">
-      <Typography.Text type="secondary">{title}</Typography.Text>
-      <div className="statistic-value">
-        {prefix && <span className="statistic-prefix">{prefix}</span>}
-        <Typography.Title level={4} className="statistic-number">
-          {value}
-        </Typography.Title>
-      </div>
-    </div>
-  );
-};
+import { Classroom, RoomType, RESPONSIBLE_PERSONS, roomTypeColors } from '@/services/room/typing';
+import { getClassrooms, saveClassrooms } from '@/services/room/index';
+import Statistic from './components/Statistic';
+import ClassroomForm from './Form';
 
 // Component chính
 const ClassroomManagement: React.FC = () => {
@@ -394,7 +342,7 @@ const ClassroomManagement: React.FC = () => {
           pagination={{ 
             pageSize: 10,
             showSizeChanger: true,
-            showTotal: (total) => `Tổng cộng ${total} phòng học` 
+            showTotal: (total) => `Tổng cộng ${total} phòng học`
           }}
           rowClassName={(record) => {
             if (record.capacity < 30) return 'ant-table-row-small-capacity';
@@ -423,93 +371,12 @@ const ClassroomManagement: React.FC = () => {
         onOk={() => form.submit()}
         maskClosable={false}
       >
-        <Form 
-          form={form} 
-          layout="vertical" 
+        <ClassroomForm
+          form={form}
+          initialValues={editingClassroom}
           onFinish={handleSubmit}
-          initialValues={editingClassroom || { capacity: 30, type: RoomType.Theory }}
-        >
-          <Form.Item
-            name="id"
-            label="Mã phòng"
-            rules={[
-              { required: true, message: 'Vui lòng nhập mã phòng' },
-              { max: 10, message: 'Tối đa 10 ký tự' },
-            ]}
-          >
-            <Input 
-              disabled={!!editingClassroom} 
-              prefix={<AuditOutlined className="input-icon" />}
-              placeholder="VD: A101, B202"
-            />
-          </Form.Item>
-          <Form.Item
-            name="name"
-            label="Tên phòng"
-            rules={[
-              { required: true, message: 'Vui lòng nhập tên phòng' },
-              { max: 50, message: 'Tối đa 50 ký tự' },
-            ]}
-          >
-            <Input 
-              placeholder="VD: Phòng học A101"
-              prefix={<BookOutlined className="input-icon" />}
-            />
-          </Form.Item>
-          <Form.Item
-            name="capacity"
-            label="Số chỗ ngồi"
-            rules={[
-              { required: true, message: 'Vui lòng nhập số chỗ ngồi' },
-              {
-                validator: (_, value) => {
-                  const numValue = Number(value);
-                  if (isNaN(numValue) || numValue < 10 || numValue > 200) {
-                    return Promise.reject(new Error('Số chỗ ngồi phải từ 10 đến 200'));
-                  }
-                  return Promise.resolve();
-                },
-              },
-            ]}
-          >
-            <Input 
-              type="number" 
-              min={10} 
-              max={200} 
-              step={1}
-              prefix={<TeamOutlined className="input-icon" />}
-            />
-          </Form.Item>
-          <Form.Item
-            name="type"
-            label="Loại phòng"
-            rules={[{ required: true, message: 'Vui lòng chọn loại phòng' }]}
-          >
-            <Select>
-              {Object.values(RoomType).map((type) => (
-                <Select.Option key={type} value={type}>
-                  <Tag color={roomTypeColors[type]}>{type}</Tag>
-                </Select.Option>
-              ))}
-            </Select>
-          </Form.Item>
-          <Form.Item
-            name="responsiblePerson"
-            label="Người phụ trách"
-            rules={[{ required: true, message: 'Vui lòng chọn người phụ trách' }]}
-          >
-            <Select>
-              {RESPONSIBLE_PERSONS.map((person) => (
-                <Select.Option key={person} value={person}>
-                  <Space>
-                    <TeamOutlined />
-                    {person}
-                  </Space>
-                </Select.Option>
-              ))}
-            </Select>
-          </Form.Item>
-        </Form>
+          isEditing={!!editingClassroom}
+        />
       </Modal>
     </div>
   );
