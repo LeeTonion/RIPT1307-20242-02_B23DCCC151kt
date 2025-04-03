@@ -4,23 +4,18 @@ import { AuditOutlined, BookOutlined, TeamOutlined } from '@ant-design/icons';
 import { Classroom, RoomType, RESPONSIBLE_PERSONS, roomTypeColors } from '@/services/room/typing';
 
 interface ClassroomFormProps {
-  form: any; // Form instance from parent
+  form: any;
   initialValues: Partial<Classroom> | null;
   onFinish: (values: Classroom) => void;
   isEditing: boolean;
 }
 
-const ClassroomForm: React.FC<ClassroomFormProps> = ({ 
-  form, 
-  initialValues, 
-  onFinish, 
-  isEditing 
-}) => {
+const ClassroomForm: React.FC<ClassroomFormProps> = ({ form, initialValues, onFinish, isEditing }) => {
   return (
     <Form 
       form={form} 
       layout="vertical" 
-      onFinish={onFinish}
+      onFinish={onFinish} 
       initialValues={initialValues || { capacity: 30, type: 'Theory' }}
     >
       <Form.Item
@@ -33,8 +28,8 @@ const ClassroomForm: React.FC<ClassroomFormProps> = ({
       >
         <Input 
           disabled={isEditing} 
-          prefix={<AuditOutlined className="input-icon" />}
-          placeholder="VD: A101, B202"
+          prefix={<AuditOutlined className="input-icon" />} 
+          placeholder="VD: A101, B202" 
         />
       </Form.Item>
       
@@ -47,8 +42,8 @@ const ClassroomForm: React.FC<ClassroomFormProps> = ({
         ]}
       >
         <Input 
-          placeholder="VD: Phòng học A101"
-          prefix={<BookOutlined className="input-icon" />}
+          placeholder="VD: Phòng học A101" 
+          prefix={<BookOutlined className="input-icon" />} 
         />
       </Form.Item>
       
@@ -72,8 +67,8 @@ const ClassroomForm: React.FC<ClassroomFormProps> = ({
           type="number" 
           min={10} 
           max={200} 
-          step={1}
-          prefix={<TeamOutlined className="input-icon" />}
+          step={1} 
+          prefix={<TeamOutlined className="input-icon" />} 
         />
       </Form.Item>
       

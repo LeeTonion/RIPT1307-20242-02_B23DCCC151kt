@@ -12,7 +12,7 @@ export enum RoomType {
   Seminar = 'Thí nghiệm',
 }
 
-export const RESPONSIBLE_PERSONS = ['Alice', 'Bob', 'Charlie'];
+export const RESPONSIBLE_PERSONS = ['Thần Thị B', 'Võ Thị A', 'Hoàng Văn C'];
 
 export const roomTypeColors: Record<RoomType, string> = {
   [RoomType.Lecture]: 'blue',
