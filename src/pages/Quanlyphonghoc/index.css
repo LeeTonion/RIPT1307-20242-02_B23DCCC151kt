@@ -1,0 +1,275 @@
+/* Container */
+.container {
+    padding: 24px;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+  }
+  
+  /* Card */
+  .card {
+    border: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Title */
+  .title {
+    margin-top: 0;
+  }
+  
+  .title-icon {
+    margin-right: 8px;
+  }
+  
+  /* Statistic */
+  .statistic-value {
+    margin-top: 4px;
+  }
+  
+  .statistic-prefix {
+    margin-right: 8px;
+  }
+  
+  .statistic-number {
+    margin: 0;
+    display: inline-block;
+  }
+  
+  /* Stats Row */
+  .stats-row {
+    margin-bottom: 16px;
+  }
+  
+  .stat-card {
+    /* Không cần thêm style nếu dùng default của Ant Design */
+  }
+  
+  /* Room Type Tags */
+  .room-type-tags {
+    margin-top: 8px;
+  }
+  
+  .room-type-tag {
+    margin: 0 4px 4px 0;
+  }
+  
+  /* Divider */
+  .divider {
+    margin: 16px 0;
+  }
+  
+  /* Filter Section */
+  .filter-section {
+    margin-bottom: 16px;
+  }
+  
+  .filter-col {
+    margin-bottom: 16px;
+  }
+  
+  .filter-select {
+    width: 100%;
+  }
+  
+  .action-buttons {
+    text-align: right;
+  }
+  
+  /* Table */
+  .ant-table-row-small-capacity {
+    background-color: #f6ffed;
+  }
+  
+  .ant-table-row-large-capacity {
+    background-color: #f9f0ff;
+  }
+  
+  /* Capacity Badge */
+  .capacity-badge.low {
+    background-color: #52c41a;
+    font-weight: bold;
+  }
+  
+  .capacity-badge.medium {
+    background-color: #1890ff;
+    font-weight: bold;
+  }
+  
+  .capacity-badge.high {
+    background-color: #722ed1;
+    font-weight: bold;
+  }
+  
+  /* Icons */
+  .responsible-icon {
+    margin-right: 8px;
+  }
+  
+  .input-icon {
+    color: #bfbfbf;
+  }
+  
+  .message-icon.success {
+    color: #52c41a;
+  }
+  
+  .message-icon.primary {
+    color: #1890ff;
+  }
+  
+  .message-icon.error {
+    color: #ff4d4f;
+  }
+  
+  .modal-icon.error {
+    color: #ff4d4f;
+  }
+  
+  /* Modal Title */
+  .modal-title {
+    display: flex;
+    align-items: center;
+  }/* Container */
+.container {
+    padding: 24px;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+  }
+  
+  /* Card */
+  .card {
+    border: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Title */
+  .title {
+    margin-top: 0;
+  }
+  
+  .title-icon {
+    margin-right: 8px;
+  }
+  
+  /* Statistic */
+  .statistic-value {
+    margin-top: 4px;
+  }
+  
+  .statistic-prefix {
+    margin-right: 8px;
+  }
+  
+  .statistic-number {
+    margin: 0;
+    display: inline-block;
+  }
+  
+  /* Stats Row */
+  .stats-row {
+    margin-bottom: 16px;
+  }
+  
+  .stat-card {
+    /* Không cần thêm style nếu dùng default của Ant Design */
+  }
+  
+  /* Room Type Tags */
+  .room-type-tags {
+    margin-top: 8px;
+  }
+  
+  .room-type-tag {
+    margin: 0 4px 4px 0;
+  }
+  
+  /* Divider */
+  .divider {
+    margin: 16px 0;
+  }
+  
+  /* Filter Section */
+  .filter-section {
+    margin-bottom: 16px;
+  }
+  
+  .filter-col {
+    margin-bottom: 16px;
+  }
+  
+  .filter-select {
+    width: 100%;
+  }
+  
+  .action-buttons {
+    text-align: right;
+  }
+  
+  /* Table */
+  .ant-table-row-small-capacity {
+    background-color: #f6ffed;
+  }
+  
+  .ant-table-row-large-capacity {
+    background-color: #f9f0ff;
+  }
+  
+  /* Capacity Badge - Điều chỉnh màu sắc hài hòa hơn */
+  .capacity-badge.low {
+    background-color: #e6f7ff; /* Xanh nhạt */
+    color: #1890ff; /* Chữ xanh đậm để tương phản */
+    font-weight: 500;
+    border: 1px solid #91d5ff; /* Viền nhạt */
+  }
+  
+  .capacity-badge.medium {
+    background-color: #f0f5ff; /* Xanh dương nhạt */
+    color: #2f54eb; /* Chữ xanh dương đậm */
+    font-weight: 500;
+    border: 1px solid #adc6ff; /* Viền nhạt */
+  }
+  
+  .capacity-badge.high {
+    background-color: #f9f0ff; /* Tím nhạt */
+    color: #722ed1; /* Chữ tím đậm */
+    font-weight: 500;
+    border: 1px solid #d3adf7; /* Viền nhạt */
+  }
+  
+  /* Icons */
+  .responsible-icon {
+    margin-right: 8px;
+  }
+  
+  .input-icon {
+    color: #bfbfbf;
+  }
+  
+  .message-icon.success {
+    color: #52c41a;
+  }
+  
+  .message-icon.primary {
+    color: #1890ff;
+  }
+  
+  .message-icon.error {
+    color: #ff4d4f;
+  }
+  
+  .modal-icon.error {
+    color: #ff4d4f;
+  }
+  
+  /* Modal Title */
+  .modal-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .modal-title > *:first-child {
+    margin-right: 8px;
+  }
+  
+  .modal-title > *:first-child {
+    margin-right: 8px;
+  }

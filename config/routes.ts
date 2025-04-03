@@ -39,7 +39,12 @@ export default [
 		component: './RandomUser',
 		icon: 'ArrowsAltOutlined',
 	},
-
+{
+		path: '/todo-list',
+		name: 'todoList',
+		icon: 'UnorderedListOutlined',
+		component: './TodoList',
+	},
 
 
 
@@ -47,6 +52,12 @@ export default [
 		path: '/Course',
 		name: 'Course',
 		component: './Course',	
+		icon: '🎲',
+	},
+	{
+		path: '/Quanlyphonghoc',
+		name: 'Quanlyphonghoc',
+		component: './Quanlyphonghoc',	
 		icon: '🎲',
 	},
 
@@ -104,12 +115,7 @@ export default [
 		component: './exception/DangCapNhat',
 		layout: false,
 	},
-	{
-		path: '/todo-list',
-		name: 'todoList',
-		icon: 'UnorderedListOutlined',
-		component: './TodoList',
-	},
+	
 	{
 		component: './exception/404',
 	},
