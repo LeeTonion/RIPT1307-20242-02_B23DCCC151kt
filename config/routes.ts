@@ -66,9 +66,9 @@ export default [
 		icon: '🎲',
 	},
 	{
-		path: '/QuanlykhoahocOnline',
-		name: 'QuanlykhoahocOnline',
-		component: './QuanlykhoahocOnline',	
+		path: '/Course',
+		name: 'Course',
+		component: './Course',	
 		icon: '🎲',
 	},
 	{
